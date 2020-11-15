@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+// Form
+//
+// Bulmaフォーム / テキストエリア
+//
+// Markup:
+// <div class="field">
+//   <label class="label">フォームタイトル</label>
+//   <p class="control">
+//     <input class="input" type="text" placeholder="テキストを入力してください">
+//   </p>
+// </div>
+//
+// Styleguide 7.0.0
+
+.input {
+  &:focus {
+    border-color: $main;
+  }
+
+  &:active {
+    border-color: $main;
+  }
+}
+
+input {
+  &:focus {
+     border-color: $main;
+  }
+
+  &:active {
+     border-color: $main;
+  }
+}
+
+.label {
+  display: inline-block;
+  color: $main;
+  font-size: 1.2rem;
+}
+
+// Form
+//
+// Bumlaフォーム / テキストエリアユーザー
+//
+// Markup:
+// <div class="field">
+//   <label class="label">ユーザーネーム</label>
+//   <p class="control has-icons-left has-icons-right">
+//     <input class="input" type="text" placeholder="お名前を入力ください">
+//     <span class="icon is-small is-left">
+//       <i class="fa fa-user"></i>
+//     </span>
+//     <span class="icon is-small is-right">
+//       <i class="fa fa-check"></i>
+//     </span>
+//   </p>
+//   <p class="help">入力内容に誤りがあります</p>
+// </div>
+//
+// Styleguide 7.0.1
+
+// Form
+//
+// Bulmaフォーム / メールアドレスエリア
+//
+// Markup:
+// <div class="field">
+//   <label class="label">メールアドレス</label>
+//   <p class="control has-icons-left has-icons-right">
+//     <input class="input" type="email" placeholder="メールアドレス">
+//     <span class="icon is-small is-left">
+//       <i class="fa fa-envelope"></i>
+//     </span>
+//     <span class="icon is-small is-right">
+//       <i class="fa fa-warning"></i>
+//     </span>
+//   </p>
+//   <p class="help">メールアドレスに誤りがあります</p>
+// </div>
+//
+// Styleguide 7.1.0
+
+// Form
+//
+// Bulmaフォーム / パスワードエリア
+//
+// Markup:
+// <div class="field">
+//   <p class="control has-icons-left">
+//     <input class="input" type="password" placeholder="パスワードを入力ください">
+//     <span class="icon is-small is-left">
+//       <i class="fa fa-lock"></i>
+//     </span>
+//   </p>
+// </div>
+//
+// Styleguide 7.2.0
+
+// Form
+//
+// Bulma セレクトボックス
+//
+// Markup:
+// <div class="field">
+//   <label class="label">タイトル</label>
+//   <p class="control">
+//     <span class="select">
+//       <select>
+//         <option>選択ください</option>
+//         <option>選択肢01</option>
+//         <option>選択肢02</option>
+//         <option>選択肢03</option>
+//       </select>
+//     </span>
+//   </p>
+// </div>
+//
+// Styleguide 7.3.0
+
+.select {
+  width: 100%;
+
+  &:after {
+    border: 1px solid $main;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  &:not(.is-multiple)::after {
+    border-left: 1px solid $main;
+    border-bottom: 1px solid $main;
+  }
+
+  select {
+    width: 100%;
+
+    &:focus {
+      border-color: $main;
+    }
+
+    &:active {
+      border-color: $main;
+    }
+  }
+
+  &:focus {
+    border-color: $main;
+  }
+
+  &:active {
+    border-color: $main;
+  }
+}
+
+select {
+  &:focus {
+    border-color: $main;
+  }
+
+  &:active {
+    border-color: $main;
+  }
+}
+
+// Form
+//
+// Bulmaフォーム / テキストフィールド
+//
+// Markup:
+// <div class="field">
+//   <label class="label">Message</label>
+//   <p class="control">
+//     <textarea class="textarea" placeholder="テキストを入力ください"></textarea>
+//   </p>
+// </div>
+//
+// Styleguide 7.4.0
+
+.textarea {
+  &[rows] {
+      min-height: 7.5rem;
+      max-height: 37.5rem;
+  } 
+
+  &:focus {
+    border-color: $main;
+  }
+
+  &:active {
+    border-color: $main;
+  }
+}
+
+textarea {
+  &:focus {
+    border-color: $main;
+  }
+
+  &:active {
+    border-color: $main;
+  }
+}
+
+// Form
+//
+// Bulmaフォーム / チェックボックス
+//
+// Markup:
+// <div class="field">
+//   <p class="control">
+//     <label class="checkbox">
+//       <input type="checkbox">
+//       同意します <a href="#">会員規約</a>
+//     </label>
+//   </p>
+// </div>
+//
+// Styleguide 7.5.0
+
+input[type="checkbox"] {
+  transform: translateY(-10%);
+}
+
+// Form
+//
+// Bulmaフォーム / ラジオボタン
+//
+// Markup:
+// <div class="field">
+//   <p class="control">
+//     <label class="radio">
+//       <input type="radio" name="question">
+//       Aについて
+//     </label>
+//     <label class="radio">
+//       <input type="radio" name="question">
+//       Bについて
+//     </label>
+//     <label class="radio">
+//       <input type="radio" name="question">
+//       Cについて
+//     </label>
+//     <label class="radio">
+//       <input type="radio" name="question">
+//       Dについて
+//     </label>
+//   </p>
+// </div>
+//
+// Styleguide 7.6.0
+.radio {
+  padding-left: 0.5rem;
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+}
+
+input[type="radio"] {
+  transform: translateY(-10%);
+  margin-right: 0.5rem;
+}
+
+.radio {
+  + .radio {
+    margin-left: 2em;
+
+    @include media(bulma-mobile) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+// Form
+//
+// Bulmaフォーム / submitボタン
+//
+// Markup:
+// <div class="field is-grouped">
+//   <p class="control">
+//     <button class="button is-primary">Submit</button>
+//   </p>
+//   <p class="control">
+//     <button class="button is-link">Cancel</button>
+//   </p>
+// </div>
+//
+// Styleguide 7.7.0
+
+// Form
+//
+// Bulmaフォーム / 検索フォーム
+//
+// Markup:
+// <div class="field has-addons">
+//   <p class="control">
+//     <input class="input" type="text" placeholder="Find a repository">
+//   </p>
+//   <p class="control">
+//     <a class="button is-primary">
+//       Search
+//     </a>
+//   </p>
+// </div>
+//
+// Styleguide 7.8.0
+
+// Form
+//
+// Bulmaフォーム / 検索フォームmodi
+//
+// Markup:
+// <div class="field is-grouped">
+//   <p class="control is-expanded">
+//     <input class="input" type="text" placeholder="Find a repository">
+//   </p>
+//   <p class="control">
+//     <a class="button is-primary">
+//       Search
+//     </a>
+//   </p>
+// </div>
+//
+// Styleguide 7.8.1
+
+// Form
+//
+// オリジナルprimaryフォーム / レイアウト
+//
+// Markup:
+// <form class="form-original-primary">
+//   <div class="field "></div>
+// </form>
+//
+// Styleguide 7.9.0
+
+.form-original-primary {
+  .field {
+    margin-bottom: 2rem;
+  }
+}
+
+@include media(bulma-iphone6) {
+  .control.has-icons-right .input, .control.has-icons-right .select select {
+    padding-right: 2em;
+  }
+
+  .control.has-icons-left .input, .control.has-icons-left .select select {
+    padding-left: 2em;
+  }
+}
+
+// contactform7用調整
+.wpcf7-form {
+  .field {
+    margin-bottom: 2rem;
+  }
+
+  .control.has-icons-right .input, .control.has-icons-right .select select {
+    padding-right: 0.5em;
+  }
+
+  .control.has-icons-left .input, .control.has-icons-left .select select {
+    padding-left: 0.5em;
+  }
+}
+
+span {
+  &.wpcf7-not-valid-tip {
+    margin-top: 3px;
+    color: $red;
+  }
+}
+
+div {
+  &.wpcf7-validation-errors {
+    display: none;
+  }
+}

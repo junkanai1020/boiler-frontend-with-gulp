@@ -1,0 +1,403 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  ヘルパー
+//
+//------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//  上下余白パーシャル
+//--------------------------------------------------------------------
+%space-pt_0 {
+  padding-top: 0px !important;
+}
+
+%space-pt_5 {
+  padding-top: 5px !important;
+}
+
+%space-pt_10 {
+  padding-top: 10px !important;
+}
+
+%space-pt_15 {
+  padding-top: 15px !important;
+}
+
+%space-pt_20 {
+  padding-top: 20px !important;
+}
+
+%space-pt_25 {
+  padding-top: 25px !important;
+}
+
+%space-pt_30 {
+  padding-top: 30px !important;
+}
+
+%space-pt_35 {
+  padding-top: 35px !important;
+}
+
+%space-pt_40 {
+  padding-top: 40px !important;
+}
+
+%space-pt_45 {
+  padding-top: 45px !important;
+}
+
+%space-pt_50 {
+  padding-top: 50px !important;
+}
+
+// padding bottom
+%space-pb_0 {
+  padding-bottom: 0px !important;
+}
+
+%space-pb_5 {
+  padding-bottom: 5px !important;
+}
+
+%space-pb_10 {
+  padding-bottom: 10px !important;
+}
+
+%space-pb_15 {
+  padding-bottom: 15px !important;
+}
+
+%space-pb_20 {
+  padding-bottom: 20px !important;
+}
+
+%space-pb_25 {
+  padding-bottom: 25px !important;
+}
+
+%space-pb_30 {
+  padding-bottom: 30px !important;
+}
+
+%space-pb_35 {
+  padding-bottom: 35px !important;
+}
+
+%space-pb_40 {
+  padding-bottom: 40px !important;
+}
+
+%space-pb_45 {
+  padding-bottom: 45px !important;
+}
+
+%space-pb_50 {
+  padding-bottom: 50px !important;
+}
+
+%space-mt_0 {
+  margin-top: 0px !important;
+}
+
+%space-mt_5 {
+  margin-top: 5px !important;
+}
+
+%space-mt_10 {
+  margin-top: 10px !important;
+}
+
+%space-mt_15 {
+  margin-top: 15px !important;
+}
+
+%space-mt_20 {
+  margin-top: 20px !important;
+}
+
+%space-mt_25 {
+  margin-top: 25px !important;
+}
+
+%space-mt_30 {
+  margin-top: 30px !important;
+}
+
+%space-mt_35 {
+  margin-top: 35px !important;
+}
+
+%space-mt_40 {
+  margin-top: 40px !important;
+}
+
+%space-mt_45 {
+  margin-top: 45px !important;
+}
+
+%space-mt_50 {
+  margin-top: 50px !important;
+}
+
+%space-mt_60 {
+  margin-top: 60px !important;
+}
+
+%space-mt_70 {
+  margin-top: 70px !important;
+}
+
+%space-mt_80 {
+  margin-top: 80px !important;
+}
+
+%space-mt_90 {
+  margin-top: 90px !important;
+}
+
+%space-mt_100 {
+  margin-top: 100px !important;
+}
+
+%space-mb_0 {
+  margin-bottom: 0px !important;
+}
+
+%space-mb_5 {
+  margin-bottom: 5px !important;
+}
+
+%space-mb_10 {
+  margin-bottom: 10px !important;
+}
+
+%space-mb_15 {
+  margin-bottom: 15px !important;
+}
+
+%space-mb_20 {
+  margin-bottom: 20px !important;
+}
+
+%space-mb_25 {
+  margin-bottom: 25px !important;
+}
+
+%space-mb_30 {
+  margin-bottom: 30px !important;
+}
+
+%space-mb_35 {
+  margin-bottom: 35px !important;
+}
+
+%space-mb_40 {
+  margin-bottom: 40px !important;
+}
+
+%space-mb_45 {
+  margin-bottom: 45px !important;
+}
+
+%space-mb_50 {
+  margin-bottom: 50px !important;
+}
+
+%space-mb_60 {
+  margin-bottom: 60px !important;
+}
+
+%space-mb_70 {
+  margin-bottom: 70px !important;
+}
+
+%space-mb_80 {
+  margin-bottom: 80px !important;
+}
+
+%space-mb_90 {
+  margin-bottom: 90px !important;
+}
+
+%space-mb_100 {
+  margin-bottom: 100px !important;
+}
+
+//--------------------------------------------------------------------
+//  タブレット用左右余白パーシャル
+//--------------------------------------------------------------------
+%hl-add_offset_5-tl {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+%hl-add_offset_10-tl {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+%hl-add_offset_15-tl {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+%hl-add_offset_20-tl {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+%hl-add_offset_40-tl {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+//--------------------------------------------------------------------
+//  PCサイズ余白設定
+//--------------------------------------------------------------------
+@include media(bulma-pc) {
+  // セクション通常
+  %space-section {
+    padding: 3rem 0;
+  }
+
+  // セクション通常別バージョン
+  %space-section-modi {
+    padding: 3rem 0 0;
+  }
+
+  // 404ページセクション
+  %space-section-404 {
+    padding: 3rem 0 5rem;
+  }
+
+  // セクションセカンダリー別ver
+  %space-section-original-secondary-modi {
+    margin-top: 50px !important;
+  }
+
+  // コンテナープライマリー別ver
+  %space-container-original-primary-modi {
+    margin-top: 80px !important;
+  }
+
+  // コンテナープライマリー別サブ
+  %space-container-original-primary-modi-sub {
+    margin-top: 40px !important;
+  }
+
+  // コンテンツエリアメイン見出し
+  %space-heading-original-primary {
+    margin-bottom: 50px !important;
+  }
+
+  // コンテンツエリアサブ見出し
+  %space-heading-original-secondary {
+    margin-bottom: 35px !important;
+  }
+
+  // Bulmaタブ
+  %space-tabs-bulma {
+    margin-top: 80px !important;
+  }
+}
+
+//--------------------------------------------------------------------
+//  タブレットサイズ余白設定
+//--------------------------------------------------------------------
+@include media(bulma-tablet) {
+  // セクション通常
+  %space-section {
+    padding: 2rem 0;
+  }
+
+  // セクション通常別バージョン
+  %space-section-modi {
+    padding: 2rem 0 0;
+  }
+
+  // セクションセカンダリー別ver
+  %space-section-original-secondary-modi {
+    margin-bottom: 40px !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // コンテナープライマリー別ver
+  %space-container-original-primary-modi {
+    margin-top: 60px !important;
+  }
+
+  // コンテナープライマリー別サブ
+  %space-container-original-primary-modi-sub {
+    margin-top: 35px !important;
+  }
+
+  // コンテンツエリアメイン見出し
+  %space-heading-original-primary {
+    margin-bottom: 40px !important;
+  }
+
+  // コンテンツエリアサブ見出し
+  %space-heading-original-secondary {
+    margin-bottom: 30px !important;
+  }
+
+  // Bulmaタブ
+  %space-tabs-bulma {
+    margin-top: 60px !important;
+  }
+}
+
+//--------------------------------------------------------------------
+//  モバイルサイズ余白設定
+//--------------------------------------------------------------------
+@include media(bulma-mobile) {
+  // セクション通常
+  %space-section {
+    padding: 1.5rem 0;
+  }
+
+  // セクション通常別バージョン
+  %space-section-modi {
+    padding: 1.5rem 0 0;
+  }
+
+  // セクションセカンダリー別ver
+  %space-section-original-secondary-modi {
+    margin-bottom: 30px !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // コンテナープライマリー別ver
+  %space-container-original-primary-modi {
+    margin-top: 40px !important;
+  }
+
+  // コンテナープライマリー別サブ
+  %space-container-original-primary-modi-sub {
+    margin-top: 30px !important;
+  }
+
+  // コンテンツエリアメイン見出し
+  %space-heading-original-primary {
+    margin-bottom: 30px !important;
+  }
+
+  // コンテンツエリアサブ見出し
+  %space-heading-original-secondary {
+    margin-bottom: 25px !important;
+  }
+
+  // Bulmaタブ
+  %space-tabs-bulma {
+    margin-top: 40px !important;
+  }
+}

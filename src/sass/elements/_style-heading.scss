@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+// Heading
+//
+// オリジナルprimary見出し / コンテンツエリア見出し
+//
+// Markup:
+// <h2 class="heading-original-primary">primary見出し</h2>
+//
+// Styleguide 5.0.0
+
+.heading-original-primary {
+  font-size: 2rem;
+  color: $dark-gray;
+  text-align: center;
+  font-weight: bold;
+
+  @extend %space-heading-original-primary;
+
+  span {
+    display: block;
+  }
+
+  @include media(bulma-tablet) {
+    font-size: 1.8rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 1.31rem;
+    line-height: 1.3;
+
+    span {
+      display: inline;
+    }
+  }
+}
+
+// Heading
+//
+// オリジナルprimary見出しmodi / コンテンツエリア見出しキーカラー
+//
+// Markup:
+// <h2 class="heading-original-primary-modi">primary見出し</h2>
+//
+// Styleguide 5.0.1
+
+.heading-original-primary-modi {
+  @extend .heading-original-primary;
+
+  @extend %space-heading-original-primary;
+
+  color: $main;
+}
+
+// Heading
+//
+// オリジナルsecondary見出し / コンテンツエリア見出しサブ
+//
+// Markup:
+// <h3 class="heading-original-secondary">secondary見出し</h3>
+//
+// Styleguide 5.1.0
+
+.heading-original-secondary {
+  font-size: 1.5rem;
+  color: $dark-gray;
+  text-align: center;
+  font-weight: bold;
+
+  @extend %space-heading-original-secondary;
+
+  @include media(bulma-tablet) {
+    font-size: 1.3rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 1.25rem;
+  }
+}
+
+// Heading
+//
+// オリジナルthird見出し / コンテンツエリア横罫線付き見出し
+//
+// Markup:
+// <h4 class="heading-original-third">third見出し</h4>
+//
+// Styleguide 5.2.0
+
+.heading-original-third {
+  font-size: 1.625rem;
+  color: $dark-gray;
+  padding-left: 0.5em;
+  border-left: solid 5px $main;
+  font-weight: bold;
+
+  @include media(bulma-tablet) {
+    font-size: 1.5rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 1.125rem;
+  }
+}
+
+// Heading
+//
+// オリジナルfourth見出し / コンテンツエリア下罫線付き見出し
+//
+// Markup:
+// <h4 class="heading-original-fourth">fourth見出し</h4>
+//
+// Styleguide 5.3.0
+
+.heading-original-fourth {
+  font-size: 1.625rem;
+  color: $dark-gray;
+  border-bottom: solid 1px $main;
+  padding-bottom: 0.3em;
+  font-weight: bold;
+
+  @include media(bulma-tablet) {
+    font-size: 1.5rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 1.125rem;
+  }
+}
+
+// Heading
+//
+// オリジナルfifth見出し / 英字+日本語コンテンツメイン見出し
+//
+// Markup:
+// <h2 class="heading-original-fifth has-text-centered">
+//   <span class="item-en">TITLE</span>
+//   <em class="item-jp">fifth見出し</em>
+// </h2>
+//
+// Styleguide 5.4.0
+
+.heading-original-fifth {
+  color: $dark-gray;
+
+  > .item-en {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    display: block;
+
+    @include media(bulma-tablet) {
+      font-size: 1.8rem;
+    }
+
+
+    @include media(bulma-mobile) {
+      font-size: 1.31rem;
+      line-height: 1.3;
+    }
+  }
+
+  > .item-jp {
+    display: block;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+}
+
+
+// Heading
+//
+// オリジナルsixth見出し / 記事見出し
+//
+// Markup:
+// <h2 class="heading-original-sixth">
+// <em class="item-date">2000.00.00</em>
+// fifth見出し</h2>
+//
+// Styleguide 5.5.0
+
+.heading-original-sixth {
+  .item-date {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  font-size: 1.8rem;
+  color: $dark-gray;
+  font-weight: bold;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid $dark-gray;
+
+  @include media(bulma-tablet) {
+    font-size: 1.6rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 1.3rem;
+
+    .item-date {
+      font-size: 0.8125rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}

@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+// Hero
+//
+// Bulmaヒーロー / TOPヒーロー大(見出し最大1344px)
+//
+// Markup:
+// <section class="hero is-large is-primary is-bold">
+//   <div class="hero-body">
+//     <div class="container">
+//       <h1 class="title">
+//         Primary bold title
+//       </h1>
+//       <h2 class="subtitle">
+//         Primary bold subtitle
+//       </h2>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.0.0
+
+// Hero
+//
+// Bulmaヒーロー / TOPヒーロー中(見出し中央揃え)
+//
+// Markup:
+// <section class="hero is-medium is-primary">
+//   <div class="hero-body">
+//     <div class="container has-text-centered">
+//       <h1 class="title">
+//         Primary bold title
+//       </h1>
+//       <h2 class="subtitle">
+//         Primary bold subtitle
+//       </h2>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.1.0
+
+// Hero
+//
+// Bulmaヒーロー / TOPヒーロー小(見出し最大1344px)
+//
+// Markup:
+// <section class="hero is-light">
+//   <div class="hero-body">
+//     <div class="container">
+//       <h1 class="title">
+//         Primary bold title
+//       </h1>
+//       <h2 class="subtitle">
+//         Primary bold subtitle
+//       </h2>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.2.0
+
+// Hero
+//
+// オリジナルprimaryヒーロー / TOPページメインビジュアル
+//
+// Markup:
+// <section class="hero-original-primary" style="background: url(http://lorempixel.com/1440/600/city) no-repeat center center;">
+//   <div class="hero-body">
+//     <div class="container">
+//       <h3 class="title">キャッチコピーメイン<em>キャッチコピーメインキャッチコピーメイン</em></h3>
+//       <h4 class="subtitle">キャッチコピーサブキャッチコピーサブキャッチコピーサブキャッチコピーサブ</h4>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.3.0
+
+.hero-original-primary {
+  @extend .hero;
+
+  @extend .is-large;
+  background-size: cover;
+
+  height: 599px;
+  overflow: hidden;
+
+  @include media(bulma-tablet) {
+    height: 500px;
+  }
+
+
+  > .hero-body {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(4, 4, 4, 0.15);
+
+    .container {
+      padding-top: 15rem;
+
+      @include media(bulma-tablet) {
+        padding-top: 12rem;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 2.4rem;
+        font-family: $jp;
+        color: $white;
+
+        em {
+          display: block;
+          font-weight: bold;
+        }
+
+        @include media(bulma-tablet) {
+          margin-bottom: 1rem;
+          font-size: 2.2rem;
+        }
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: $jp;
+        color: $white;
+        margin-top: 0;
+
+        @include media(bulma-tablet) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  @include media(bulma-mobile) {
+    display: none;
+  }
+}
+
+// Hero
+//
+// オリジナルprimaryヒーローmodi / TOPページメインビジュアルパターン背景
+//
+// Markup:
+// <section class="hero-original-primary-modi-pattern">
+//   <div class="hero-body">
+//     <div class="container">
+//       <h3 class="title">キャッチコピーメイン<em>キャッチコピーメインキャッチコピーメイン</em></h3>
+//       <h4 class="subtitle">キャッチコピーサブキャッチコピーサブキャッチコピーサブキャッチコピーサブ</h4>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.3.1
+
+.hero-original-primary-modi-pattern {
+  @extend .hero-original-primary;
+
+  background-image: linear-gradient(90deg, #085496 0%, #1e76b9 50%, #44a0d4 100%);
+
+}
+
+// Hero
+//
+// オリジナルsecondaryヒーロー / 下層ページメインビジュアル
+//
+// Markup:
+// <section class="hero-original-secondary" style="background: url(http://lorempixel.com/1440/480/sports) no-repeat center center;">
+//   <div class="hero-body">
+//     <div class="container has-text-centered">
+//       <h2 class="title">タイトル</h2>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.4.0
+
+.hero-original-secondary {
+  @extend .hero;
+
+  @extend .is-medium;
+  background-size: cover;
+
+  height: 480px;
+  overflow: hidden;
+
+  @include media(bulma-tablet) {
+    height: 370px;
+  }
+
+
+  > .hero-body {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(4, 4, 4, 0.15);
+
+    .container {
+      padding-top: 13rem;
+
+      @include media(bulma-tablet) {
+        padding-top: 10rem;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 2.4rem;
+        font-family: $jp;
+        color: $white;
+        display: inline-block;
+        padding: 0 0.5em 1rem;
+        border-bottom: 3px solid $white;
+      }
+    }
+  }
+
+  @include media(bulma-mobile) {
+    display: none;
+  }
+}
+
+// Hero
+//
+// オリジナルthirdヒーロー / 記事詳細ページメインビジュアル
+//
+// Markup:
+// <section class="hero-original-third">
+//   <div class="hero-body">
+//     <div class="container">
+//       <h3 class="title">タイトル</h3>
+//     </div>
+//   </div>
+// </section>
+//
+// Styleguide 13.5.0
+
+.hero-original-third {
+  @extend .hero;
+
+  height: 200px;
+  background: linear-gradient(135deg, #e6e9ec 0%, #a1afc5 100%) !important;
+  @include media(bulma-tablet) {
+    height: 180px;
+  }
+
+
+  @include media(bulma-mobile) {
+    height: auto;
+  }
+
+
+  > .hero-body {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include media(bulma-mobile) {
+      padding: 2rem 0 2rem;
+    }
+
+
+    .container {
+      padding-top: 5rem;
+
+      @include media(bulma-mobile) {
+        padding-top: 0;
+      }
+
+
+      .title {
+        font-weight: bold;
+        font-size: 2.4rem;
+        font-family: $jp;
+        color: $white;
+        display: inline-block;
+        padding: 0 0.5em 1rem;
+
+        @include media(bulma-mobile) {
+          padding: 0;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+// Hero
+//
+// オリジナルfourthヒーロー / メインビジュアルSP共通
+//
+// Markup:
+// <section class="hero-original-fourth">
+//  <img src="background: url(http://lorempixel.com/640/320/business" alt="サンプル">
+// </section>
+//
+// Styleguide 13.6.0
+
+.hero-original-fourth {
+  display: none;
+  height: 20rem;
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+}

@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+// Box
+//
+// オリジナルsecondaryボックス / 情報ボックス
+//
+// Markup:
+// <div class="box-original-primary">
+//  <div class="box-inner">
+//    <p class="item-title">タイトル</p>
+//    <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+// テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+// テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//  </div>
+// </div>
+//
+// Styleguide 15.0.0
+
+.box-original-primary {
+  background-color: $light-gray;
+  text-align: left;
+
+  > .box-inner {
+    padding: 2.5rem;
+
+    @include media(bulma-mobile) {
+      padding: 1.5rem;
+    }
+
+
+    .item-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 1em;
+
+      @include media(bulma-tablet) {
+        font-size: 1.5rem;
+      }
+
+
+      @include media(bulma-mobile) {
+        font-size: 1.3rem;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .item-text {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Box
+//
+// オリジナルsecondaryボックス / フッタートップへ戻るボックス
+//
+// Markup:
+// <p class="box-original-secondary"><a href="#" class="button-to-top">Page Top<span class="icon"><i class="fa fa-angle-up" aria-hidden="true"></i></span></a></p>
+//
+// Styleguide 15.1.0
+
+.box-original-secondary {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+}
+
+// Box
+//
+// オリジナルthirdボックス / 404ボックス
+//
+// Markup:
+// <div class="box-original-third">
+//   <div class="box-inner">
+//     <h2 class="heading-original-primary">お探しのページが<em>見つかりませんでした。</em></h2>
+//     <p class="item-image">
+//       <img src="http://localhost:8282/img/sample/loupe.png" class="" alt="">
+//     </p>
+//     <p class="item-text">大変申し訳ございません。お客さまがお探しのページが見つかりませんでした。<em>移動もしくは削除された可能性があります。</em></p>
+//     <p class="item-button">
+//       <a href="/" class="button is-primary"><i class="fa fa-angle-left" aria-hidden="true"></i>ボタン</a>
+//     </p>
+//   </div>
+// </div>
+//
+// Styleguide 15.2.0
+
+.box-original-third {
+  padding: 5rem;
+  background-color: $snow-white;
+  text-align: center;
+  position: relative;
+
+  @include media(bulma-mobile) {
+    width: 100%;
+    padding: 2.5rem 1.25rem;
+  }
+
+
+  > .box-inner {
+    .item-title {
+      em {
+        display: block;
+      }
+    }
+
+    .item-image {
+      position: absolute;
+      right: 5%;
+      top: 35%;
+      bottom: 0;
+      margin: auto;
+
+      @include media(bulma-tablet) {
+        top: 15%;
+      }
+
+
+      @include media(bulma-mobile) {
+        display: none;
+      }
+    }
+
+    .item-text {
+      margin-bottom: 50px;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 30px;
+      }
+
+
+      em {
+        display: block;
+
+        @include media(bulma-mobile) {
+          display: inline;
+        }
+      }
+    }
+  }
+}

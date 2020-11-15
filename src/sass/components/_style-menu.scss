@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+// Menu
+//
+// Bulmaメニュー / SPサイドメニュー
+//
+// Markup:
+// <aside class="menu">
+//   <p class="menu-label">カテゴリー01</p>
+//   <ul class="menu-list">
+//     <li><a>リスト01</a></li>
+//     <li><a>リスト02</a></li>
+//   </ul>
+//   <p class="menu-label">カテゴリー02</p>
+//   <ul class="menu-list">
+//     <li><a>リスト03</a></li>
+//     <li><a>リスト04</a></li>
+//     <li><a>リスト05</a></li>
+//   </ul>
+//   <p class="menu-label">カテゴリー03</p>
+//   <ul class="menu-list">
+//     <li><a>リスト06</a></li>
+//     <li><a>リスト07</a></li>
+//   </ul>
+// </aside>
+//
+// Styleguide 10.0.0
+
+// Menu
+//
+// オリジナルprimaryメニュー / フッターメニュー(白)
+//
+// Markup:
+// <ul class="menu-original-primary">
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+//  <li class="menu-item"><a href="#">アイテム</a></li>
+// </ul>
+//
+// Styleguide 10.1.0
+
+.menu-original-primary {
+  > .menu-item {
+    display: inline-block;
+    line-height: 1;
+    font-size: 1rem;
+    border-left: 1px solid $white;
+
+    a {
+      padding: 0.4rem 0.8rem;
+      color: $white;
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      a {
+        padding: 0.4rem 0 0.4rem 0.8rem;
+      }
+    }
+  }
+
+  @include media(bulma-desktop) {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .menu-item {
+      flex-basis: 25%;
+      margin-top: 1rem;
+      border: none;
+    }
+  }
+
+
+  @include media(bulma-mobile) {
+    text-align: left;
+    margin: 0 0.5rem;
+    padding: 0;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+
+    > .menu-item {
+      flex-basis: 50%;
+      margin-top: 0;
+      font-size: 0.875rem;
+
+      a {
+        display: block;
+        padding: 0.75rem 0;
+        border-top: 1px solid $white;
+      }
+
+      &:first-child {
+        a {
+          border-top: none;
+        }
+      }
+
+      &:nth-of-type(2) {
+        a {
+          border-top: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          padding: 0.75rem 0;
+        }
+      }
+
+      &:nth-of-type(even) {
+        a {
+          padding-left: 0.5rem;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            border-right: 1px solid $white;
+            height: 1.5em;
+          }
+        }
+      }
+    }
+  }
+
+
+  @include media(bulma-iphone5) {
+    > .menu-item {
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+// Menu
+//
+// オリジナルsecondaryメニュー / オフカンバスメニュー(SPのみ)
+//
+// Markup:
+// <ul class="menu-original-secondary js-accordion-wrapper">
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item">
+//         <a href="#" class="menu-item-trigger">アイテム</a>
+//         <ul class="menu-inner-offcanvas js-offcanvas-slide-menu">
+//             <li class="menu-inner-item"><a href="#">アイテム</a></li>
+//             <li class="menu-inner-item"><a href="#">アイテム</a></li>
+//             <li class="menu-inner-item"><a href="#">アイテム</a></li>
+//         </ul>
+//     </li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+//     <li class="menu-item"><a href="#">アイテム</a></li>
+// </ul>
+//
+// Styleguide 10.2.0
+
+.menu-original-secondary {
+  width: 256px;
+  color: $white;
+  background: $midium-gray;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+
+  > .menu-item {
+    border-bottom: 1px solid $light-gray;
+
+    &:first-child {
+      border-top: 1px solid $light-gray;
+    }
+
+    > a {
+      display: block;
+      padding: 1rem 0 1rem 2em;
+      color: $white;
+      position: relative;
+
+      &.menu-item-trigger {
+        &:after {
+          right: 10%;
+          top: 50%;
+          content: "\f067";
+          font: normal normal normal 14px/1 FontAwesome;
+          text-rendering: auto;
+          font-smoothing: antialiased;
+          position: absolute;
+          transform: translateY(-50%);
+          font-size: 0.8rem;
+        }
+
+        // アコーディオンメニュー/トリガー
+        &.is-open {
+          &:after {
+            content: "\f068";
+          }
+        }
+      }
+    }
+
+    .menu-inner-item {
+      > a {
+        display: block;
+        padding: 1rem 0 1rem 3em;
+        color: $white;
+        border-top: 1px solid $light-gray;
+      }
+    }
+
+    // アコーディオンメニュー/ターゲット
+    .js-offcanvas-slide-menu {
+      max-height: 0;
+      overflow-y: hidden;
+      transition: all 0.5s;
+
+      &.is-open {
+        max-height: 171px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.slideout-open {
+  .menu-offcanvas {
+    display: block;
+  }
+}
+
+// Menu
+//
+// オリジナルthirdメニュー / フッターメニュー別デザイン
+//
+// Markup:
+// <ul class="menu-original-third">
+//   <li class="menu-item"><a href="#"></a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+//   <li class="menu-item"><a href="#">アイテム</a></li>
+// </ul>
+//
+// Styleguide 10.3.0
+
+.menu-original-third {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > .menu-item {
+    width: 25%;
+    margin-bottom: 1rem;
+
+    @include media(bulma-mobile) {
+      margin-bottom: 0;
+    }
+
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  @include media(bulma-mobile) {
+    text-align: left;
+    margin: 0 0.5rem;
+    padding: 0;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+
+    > .menu-item {
+      flex-basis: 50%;
+      margin-top: 0;
+      font-size: 0.875rem;
+
+      a {
+        display: block;
+        padding: 0.75rem 0;
+        border-top: 1px solid $white;
+      }
+
+      &:first-child {
+        a {
+          border-top: none;
+        }
+      }
+
+      &:nth-of-type(2) {
+        a {
+          border-top: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          padding: 0.75rem 0;
+        }
+      }
+
+      &:nth-of-type(even) {
+        a {
+          padding-left: 0.5rem;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            border-right: 1px solid $white;
+            height: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Menu
+//
+// オリジナルfourthメニュー / オフカンバスメニュー別デザイン
+//
+// Markup:
+// <ul class="menu-original-fourth">
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="#">アイテム<span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+// </ul>
+//
+// Styleguide 10.4.0
+
+.menu-original-fourth {
+  color: $white;
+  background: $main;
+  display: none;
+
+  > .menu-item {
+    border-bottom: 1px solid $light-gray;
+    position: relative;
+
+    &:first-child {
+      border-top: 1px solid $light-gray;
+    }
+
+    > a {
+      display: block;
+      padding: 1rem 0 1rem 2em;
+      color: $white;
+      width: 100%;
+
+      .icon {
+        position: absolute;
+        right: 1em;
+        transform: translateY(-5%);
+      }
+    }
+  }
+
+  @include media(bulma-tablet) {
+    display: block;
+  }
+}

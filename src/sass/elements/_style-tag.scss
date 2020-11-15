@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+// Tag
+//
+// オリジナルprimaryタグ / キーカラータグ
+//
+// Markup:
+// <span class="tag-original-primary">primaryタグ</span>
+//
+// Styleguide 4.0.0
+
+.tag-original-primary {
+  background-color: $main;
+  color: $white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  display: inline-block;
+  font-weight: bold;
+
+  @include media(bulma-tablet) {
+    font-size: 1rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    font-size: 0.875rem;
+  }
+}
+
+// Tag
+//
+// オリジナルprimaryタグmodi / 英字フォントキーカラータグ
+//
+// Markup:
+// <span class="tag-original-primary-modi">primary tag</span>
+//
+// Styleguide 4.0.1
+
+.tag-original-primary-modi {
+  @extend .tag-original-primary;
+
+  font-family: $main-en;
+}
+
+// Tag
+//
+// オリジナルsecondaryタグ / フォーム必須タグ
+//
+// Markup:
+// <span class="tag-original-third">secondaryタグ</span>
+//
+// Styleguide 4.1.0
+
+.tag-original-third {
+  background-color: $red;
+  color: $white;
+  padding: 2px 10px;
+  font-size: 0.8125rem;
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+// Tag
+//
+// オリジナルthirdタグ / ロゴ
+//
+// Markup:
+// <div class="tag-original-fourth">
+//  <a href="/">
+//  <em class="item-text">テキスト</em>
+//  <img src="http://satyr.io/250x50" alt="ロゴ">
+//  </a>
+//</div>
+//
+// Styleguide 4.2.0
+
+.tag-original-fourth {
+  > a {
+    .item-text {
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inherit;
+      height: 0px;
+      width: 0;
+      display: inline-block;
+    }
+  }
+}

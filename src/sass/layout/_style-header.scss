@@ -1,0 +1,240 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  ヘッダー
+//
+//------------------------------------------------------------------------------------------------
+.l-header {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: $white;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2), 0px -1px 5px 1px rgba(255, 255, 255, 1) inset;
+
+  > .header-inner {
+    @extend .container;
+    padding: 16px 0;
+  }
+
+  @include media(bulma-widescreen) {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+
+
+  @include media(bulma-desktop) {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+
+  @include media(bulma-tablet) {
+    padding: 5px 0;
+  }
+
+
+  .hero-head {
+    > .container {
+      @include media(bulma-widescreen) {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+
+
+      @include media(bulma-desktop) {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+
+
+      @include media(bulma-tablet) {}
+    }
+  }
+
+  .nav {
+    .container {
+      @include media(bulma-widescreen) {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+
+
+      @include media(bulma-desktop) {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+      }
+
+
+      @include media(bulma-tablet) {}
+    }
+
+    .nav-toggle {
+      span {
+        width: 25px;
+        left: 45%;
+
+        &:nth-child(1) {
+          margin-top: -8px;
+        }
+
+        &:nth-child(2) {
+          margin-top: -1px;
+        }
+
+        &:nth-child(3) {
+          margin-top: 6px;
+        }
+      }
+
+      &:hover {
+        background: $white;
+      }
+    }
+
+    .nav-left {
+      overflow: inherit;
+
+      a {}
+    }
+
+    .nav-right {
+      overflow: inherit;
+
+      @include media(bulma-tablet) {
+        display: none;
+      }
+    }
+
+    a {
+      &.nav-item {
+        &.is-tab {
+          &.is-active {
+            border-bottom: 3px solid $main;
+            color: $main;
+          }
+        }
+      }
+    }
+
+    .nav-item {
+      img {
+        max-height: 40px;
+
+        @include media(bulma-tablet) {
+          max-height: 32px;
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    @include media(bulma-tablet) {
+      display: block;
+    }
+  }
+
+  &.headroom {
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+  }
+
+  &.headroom--pinned {
+    transform: translateY(0);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+}
+
+//--------------------------------------------------------------------
+//  ヘッダー　2段
+//--------------------------------------------------------------------
+.l-header-modi01 {
+    @extend .l-header;
+
+  > .header-inner {
+    margin-top: 2.18rem;
+
+    @include media(bulma-tablet) {
+      margin-top: 1rem;
+    }
+
+
+    @include media(bulma-mobile) {
+      margin-top: 0;
+    }
+  }
+
+  .hero-head {
+    > .container {}
+  }
+
+  .nav {
+    margin-bottom: 1.5rem;
+
+    @include media(bulma-tablet) {
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+
+
+    @include media(bulma-mobile) {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+
+    @include media(bulma-iphone5) {
+      padding: 0 0.8rem;
+    }
+
+
+    .nav-right {
+      @include media(bulma-tablet) {
+        display: block;
+      }
+
+
+      @include media(bulma-mobile) {
+        display: none;
+      }
+    }
+  }
+
+  .nav-toggle {
+    @include media(bulma-tablet) {
+      display: none;
+    }
+
+
+    @include media(bulma-mobile) {
+      margin-left: auto;
+      display: block;
+    }
+  }
+
+  .nav-left {
+    @include media(bulma-tablet) {
+      align-items: center;
+    }
+  }
+
+  .global-nav {
+    margin-bottom: 1.25rem;
+
+    @include media(bulma-mobile) {
+      display: none;
+    }
+  }
+}

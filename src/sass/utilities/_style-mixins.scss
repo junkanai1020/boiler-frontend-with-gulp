@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  Mixin
+//
+//------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//  レスポンシブWebデザインでのブレイクポイント
+//--------------------------------------------------------------------
+
+// Bulmaブレイクポイント
+$bulma-fullhd: 1384px;
+$bulma-widescreen: 1192px;
+$bulma-desktop: 1025px;
+$bulma-ipadpro: 1024px;
+$bulma-tablet: 992px;
+$bulma-mobile: 640px;
+$bulma-iphone6s: 414px;
+$bulma-iphone6: 375px;
+$bulma-iphone5: 320px;
+
+
+@mixin media($media-width) {
+  @if $media-width == bulma-fullhd {
+    @media only screen and (min-width: $bulma-fullhd) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-widescreen {
+    @media only screen and (max-width: $bulma-fullhd) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-desktop {
+    @media only screen and (max-width: $bulma-widescreen) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-pc {
+    @media only screen and (min-width: $bulma-desktop) {
+      @content;
+    }
+  }
+  @else if $media-width == ipadpro {
+    @media only screen and (max-width: $bulma-ipadpro) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-tablet {
+    @media only screen and (max-width: $bulma-tablet) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-mobile {
+    @media only screen and (max-width: $bulma-mobile) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-iphone6s {
+    @media only screen and (max-width: $bulma-iphone6s) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-iphone6 {
+    @media only screen and (max-width: $bulma-iphone6) {
+      @content;
+    }
+  }
+  @else if $media-width == bulma-iphone5 {
+    @media only screen and (max-width: $bulma-iphone5) {
+      @content;
+    }
+  }
+}

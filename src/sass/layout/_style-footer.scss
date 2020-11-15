@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  フッター
+//
+//------------------------------------------------------------------------------------------------
+.l-footer {
+  background-color: $dark-blue;
+  padding: 3rem 1.5rem;
+
+  @include media(bulma-desktop) {
+    padding: 1.5rem 0 1.5rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    padding: 1rem 0;
+  }
+
+
+  > .container {
+    @include media(bulma-desktop) {
+      max-width: none;
+      width: auto;
+    }
+
+
+    .content {
+      ul {
+        margin: 0 0 0.5rem;
+
+        @include media(bulma-desktop) {
+          margin: 0 0 2rem;
+        }
+
+
+        @include media(bulma-mobile) {
+          margin: 0 1rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+//--------------------------------------------------------------------
+//  ヘッダー　2段
+//--------------------------------------------------------------------
+.l-footer-modi01 {
+  &.l-footer {
+    padding: 3rem 0 0;
+    @include media(bulma-mobile) {
+      padding: 2rem 0 0;
+    }
+    .footer-inner {
+      &:first-child {
+        margin-bottom: 2rem;
+        @include media(bulma-tablet) {
+          img {
+            max-width: 200px;
+          }
+        }
+        @include media(bulma-mobile) {
+          overflow: hidden;
+          margin-bottom: 1.5rem;
+          img {
+            max-width: 150px;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        margin-bottom: 2rem;
+      }
+      &:nth-of-type(3) {
+        padding: 2rem 0;
+        background-color: $dark-navy;
+        @include media(bulma-mobile) {
+          padding: 1rem 0;
+        }
+      }
+    }
+  }  
+}

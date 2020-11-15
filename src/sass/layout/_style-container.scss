@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  コンテナ
+//
+//------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//  オリジナルprimaryコンテナー / 最大幅1135px
+//--------------------------------------------------------------------
+.container-original-primary {
+  max-width: 1135px;
+  margin: 0 auto;
+
+  @include media(bulma-desktop) {
+    max-width: none;
+    padding: 0 1.5rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    padding: 0 1rem;
+  }
+}
+
+//--------------------------------------------------------------------
+//  オリジナルprimaryコンテナー別バージョン / 最大幅1135px上余白あり
+//--------------------------------------------------------------------
+.container-original-primary-modi {
+  @extend .container-original-primary;
+
+  @extend %space-container-original-primary-modi;
+}
+
+//--------------------------------------------------------------------
+//  オリジナルprimaryコンテナー別バージョンサブ / 最大幅1135px上余白あり(小)
+//--------------------------------------------------------------------
+.container-original-primary-modi-sub {
+  @extend .container-original-primary;
+
+  @extend %space-container-original-primary-modi-sub;
+}
+
+//--------------------------------------------------------------------
+//  オリジナルsecondaryコンテナー / 最大幅980px
+//--------------------------------------------------------------------
+.container-original-secondary {
+  max-width: 980px;
+  margin: 0 auto;
+
+  @include media(bulma-tablet) {
+    max-width: none;
+    padding: 0 1.5rem;
+  }
+
+
+  @include media(bulma-mobile) {
+    padding: 0 1rem;
+  }
+}
+
+//--------------------------------------------------------------------
+//  オフカンバスコンテナ別デザイン
+//--------------------------------------------------------------------
+.container-default-offcanvas01 {
+  display: none;
+}
+
+.slideout-open {
+  .container-default-offcanvas01 {
+    display: block;
+  }
+}
+
+.container-default-offcanvas-inner {
+  width: 256px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  background: $midium-gray;
+}

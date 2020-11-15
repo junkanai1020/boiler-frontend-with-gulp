@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+// Text
+//
+// 汎用テキスト
+//
+// Markup:
+// <p>
+//  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+//  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+//  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+// </p>
+//
+// Styleguide 6.0.0
+
+// Text
+//
+// オリジナルprimaryテキスト / コンテンツエリアアバウトテキスト
+//
+// Markup:
+// <p class="text-orininal-primary">
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+//  primaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキストprimaryテキスト
+// </p>
+//
+// Styleguide 6.1.0
+
+.text-orininal-primary {
+  font-size: 1rem;
+  color: $dark-gray;
+  line-height: 2;
+
+  @include media(bulma-mobile) {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+// Text
+//
+// オリジナルsecondaryテキスト / ヒーローコンテンツテキスト
+//
+// Markup:
+// <p class="text-orininal-secondary">
+//    secondaryテキストsecondaryテキスト
+//    secondaryテキストsecondaryテキスト
+//    secondaryテキストsecondaryテキスト
+//    secondaryテキストsecondaryテキスト
+// </p>
+//
+// Styleguide 6.2.0
+
+.text-orininal-secondary {
+  font-size: 1.875rem;
+  color: $dark-gray;
+  display: block;
+  width: 65%;
+
+  @include media(bulma-tablet) {
+    font-size: 1.6rem;
+    width: 60%;
+  }
+
+
+  @include media(bulma-mobile) {
+    width: 100%;
+    font-size: 1.125rem;
+  }
+}
+
+// Text
+//
+// オリジナルthirdテキスト / 注釈テキスト
+//
+// Markup:
+// <p class="text-original-third">thirdテキスト</p>
+//
+// Styleguide 6.3.0
+
+.text-original-third {
+  color: $light-gray;
+  font-size: 0.875rem;
+}
+
+// Text
+//
+// オリジナルfourthテキスト / コピーライト(白)
+//
+// Markup:
+// <p class="text-original-fourth">Copyright(C)XXXXXXX ALL Rights Reserved.</p>
+//
+// Styleguide 6.4.0
+
+.text-original-fourth {
+  color: $white;
+  font-size: 0.75rem;
+  font-family: $main-en;
+  letter-spacing: 0.15rem;
+
+  @include media(bulma-mobile) {
+    font-size: 0.6875rem;
+  }
+
+
+  @include media(bulma-iphone5) {
+    font-size: 0.625rem;
+  }
+}

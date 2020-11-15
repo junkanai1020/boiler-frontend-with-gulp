@@ -1,0 +1,14 @@
+<% param = { page: 'top', path: '/', title: 'トップ' } %>
+<% block "title": %>TOPタイトル<% end %>
+<% block "description": %>"TOP description"<% end %>
+<% extend "../layout/default.ect" %>
+<!-- header -->
+<% include "../partials/header.ect", param %>
+<main class="l-main">
+  <!-- main-visual -->
+  <% include "../partials/main-visual.ect" %>
+  <!-- content-area -->
+  <% include "../partials/content.ect" %>
+  <!-- footer -->
+  <% include "../partials/footer.ect" %>
+</main>

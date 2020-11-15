@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+// Nav
+//
+// Bulmaナビゲーション / ヘッダーナビゲーション(PCのみ)
+//
+// Markup:
+// <div class="nav-global nav-right nav-menu">
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+//  <a class="nav-item is-tab" href="#">アイテム</a>
+// </div>
+//
+// Styleguide 9.0.0
+
+.nav {
+  height: auto;
+
+  > .container {
+    height: auto;
+  }
+
+  .nav-left {
+    .nav-item {
+      padding: 0rem 0.75rem;
+    }
+  }
+}
+
+a {
+  &.nav-item {
+    &:not(.button) {
+      &.is-tab {
+        &:hover {
+          border-bottom-color: $main;
+        }
+      }
+    }
+
+    &.is-tab {
+      &:hover {
+        border-bottom-color: $main;
+      }
+    }
+  }
+}
+
+a {
+  &.nav-item {
+    color: $dark-gray;
+  }
+}
+
+// Nav
+//
+// オリジナルprimaryナビゲーション / 中央揃えヘッダーナビゲーション(PCのみ)
+//
+// Markup:
+// <ul class="nav-original-primary has-text-centered">
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+//   <li class="nav-inner"><a href="#">アイテム</a></li>
+// </ul>
+//
+// Styleguide 9.1.0
+
+.nav-original-primary {
+  width: 100%;
+  display: flex;
+
+  @include media(bulma-mobile) {
+    display: none;
+  }
+
+
+  > .nav-inner {
+    line-height: 1;
+    width: 16.6%;
+    border-left: 1px solid $blight-gray;
+
+    a {
+      font-size: 0.937rem;
+      color: $dark-gray;
+      padding: 0.625rem 0;
+      display: block;
+      border-bottom: 2px solid transparent;
+      margin: 0 0.18rem;
+
+      &:hover {
+        border-bottom-color: $light-gray;
+      }
+
+      &.is-active {
+        border-bottom: 2px solid $light-gray;
+      }
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}

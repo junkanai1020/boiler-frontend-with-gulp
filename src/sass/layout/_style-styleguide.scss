@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  スタイルガイド / SC5styleguide用
+//
+//------------------------------------------------------------------------------------------------
+.section-markup-wrapper {
+  background: $white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $dark-gray;
+  line-height: 1.5;
+  font-weight: normal;
+  overflow-y: scroll;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: $jp !important;
+  font-size: 16px;
+}

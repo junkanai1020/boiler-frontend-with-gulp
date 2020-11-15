@@ -1,0 +1,159 @@
+@charset 'utf-8';
+
+//------------------------------------------------------------------------------------------------
+//
+//  基礎設定
+//
+//------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------
+//  基礎
+//--------------------------------------------------------------------
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  background: $white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $dark-gray;
+  font-family: $jp;
+  line-height: 1.5;
+  font-weight: normal;
+  overflow-y: scroll;
+  min-height: 100%;
+}
+
+// for IE6
+* html body {
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+}
+
+//------------------------------------------------------------------
+//  リセット
+//------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  font-style: italic;
+  vertical-align: middle;
+  
+  // デバイス表示切り替え
+  &.is-mobile-none {
+    display: inline;
+    @include media(bulma-mobile) {
+      display: none;
+    }
+  }
+  &.is-mobile-only {
+    display: none;
+    @include media(bulma-mobile) {
+      display: inline;
+    }
+  }
+}
+
+.gm-style img,
+img[width],
+img[height] {
+  max-width: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+th {
+  text-align: left;
+  vertical-align: top;
+}
+
+label, select, option {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  vertical-align: middle;
+  // margin-right: 0.3em;
+}
+
+figure {
+  margin: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+//------------------------------------------------------------------
+//  リンク設定
+//------------------------------------------------------------------
+a {
+  text-decoration: none;
+  color: $main;
+}
+
+a:hover,
+input[type="submit"]:hover,
+button:hover {
+  animation: show 0.3s linear;
+  opacity: 0.6;
+  @include media(bulma-tablet) {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+.is-focus-link {
+  position: relative;
+  top: 1px;
+}
+
+input:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+//--------------------------------------------------------------------
+//  Googleリマーケティングタグ隙間消去
+//--------------------------------------------------------------------
+iframe[name="google_conversion_frame"] {
+  position: absolute;
+  height: 0;
+}
+
+//--------------------------------------------------------------------
+//  区切り線
+//--------------------------------------------------------------------
+.line-primary {
+  height: 1px;
+}
+

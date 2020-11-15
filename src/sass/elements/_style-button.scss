@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+// Button
+//
+// Bulmaボタン / デフォルトボタン
+//
+// Markup:
+// <button class="button is-primary">Bulmaボタン</button>
+//
+// Styleguide 3.0.0
+
+.button {
+  &.is-primary {
+    background-color: $main;
+  }
+}
+
+// Button
+//
+// オリジナルprimaryボタン / キーカラーボタン
+//
+// Markup:
+// <a href="#" class="button-original-secondary">primaryボタン</a>
+//
+// Styleguide 3.1.0
+
+.button-original-primary {
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  background-color: $main;
+  color: $white;
+  display: inline-block;
+  font-weight: bold;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+// Button
+//
+// オリジナルsecondaryボタン / ベースカラーボタン
+//
+// Markup:
+// <a href="#" class="button-original-secondary">secondaryボタン</a>
+//
+// Styleguide 3.2.0
+
+.button-original-secondary {
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  background-color: $base;
+  color: $white;
+  display: inline-block;
+  font-weight: bold;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+// Button
+//
+// オリジナルsecondaryボタンmodi / アイコン付きベースカラーボタン
+//
+// Markup:
+// <a href="#" class="button-original-secondary-modi"><i class="fa fa-angle-left" aria-hidden="true"></i>secondaryボタンmodi</a>
+//
+// Styleguide 3.2.1
+
+.button-original-secondary-modi {
+  @extend .button-original-secondary;
+
+  .fa {
+    padding-right: 0.3rem;
+    transform: translateY(10%);
+    font-size: 1.2rem;
+  }
+}
+
+// Button
+//
+// オリジナルthirdボタン / キーカラー罫線白背景ボタン
+//
+// Markup:
+// <a href="#" class="button-original-third"><i class="fa fa-arrow-left" aria-hidden="true"></i>thirdボタン</a>
+//
+// Styleguide 3.3.0
+
+.button-original-third {
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  background-color: $white;
+  color: $main;
+  border: 2px solid $main;
+  display: inline-block;
+  font-weight: bold;
+
+  .fa {
+    padding-right: 0.3rem;
+    transform: translateY(10%);
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+// Button
+//
+// オリジナルfourthボタン / ラウンドボタン
+//
+// Markup:
+// <a href="#" class="button-original-fourth">fourthボタン</a>
+//
+// Styleguide 3.4.0
+
+.button-original-fourth {
+  background-color: $main;
+  font-size: 1.125rem;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 1.56rem;
+  text-align: center;
+  padding: 1rem 3rem;
+  line-height: 1;
+  color: $white;
+  border: 2px $white solid;
+
+  &:hover {
+    color: $white;
+  }
+
+  @include media(bulma-mobile) {
+    font-size: 1rem;
+  }
+}

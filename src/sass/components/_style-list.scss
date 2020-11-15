@@ -1,0 +1,1525 @@
+@charset "utf-8";
+
+// List
+//
+// オリジナルprimaryリスト / ラベル付きリスト
+//
+// Markup:
+// <ul class="list-original-primary">
+//   <li class="list-item">
+//     <p class="item-label"><span class="tag-original-primary">タイトル</span></p>
+//     <p class="item-text">テキストテキストテキストテキストテキスト</p>
+//     <p class="item-image"><img src="http://satyr.io/359x225" alt="サンプル"></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="tag-original-primary">タイトル</span></p>
+//     <p class="item-text">テキストテキストテキストテキストテキスト</p>
+//     <p class="item-image"><img src="http://satyr.io/359x225" alt="サンプル"></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="tag-original-primary">タイトル</span></p>
+//     <p class="item-text">テキストテキストテキストテキストテキスト</p>
+//     <p class="item-image"><img src="http://satyr.io/359x225" alt="サンプル"></p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.0.0
+
+.list-original-primary {
+  @extend .columns;
+
+  @include media(bulma-tablet) {
+    display: flex;
+  }
+
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+
+
+  > .list-item {
+    @extend .column;
+
+    @include media(bulma-mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .item-label {
+      margin-bottom: 0.8rem;
+      text-align: center;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 0.9rem;
+        order: 1;
+      }
+    }
+
+    .item-text {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      @include media(bulma-mobile) {
+        order: 3;
+        margin: 0.8rem 0 0;
+      }
+    }
+
+    .item-image {
+      @include media(bulma-mobile) {
+        order: 2;
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルsecondaryリスト / アイコン付きリスト
+//
+// Markup:
+// <ul class="list-original-secondary">
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-label"><span class="icon"><i class="fa fa-calculator" aria-hidden="true"></i></span></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="#">詳しく見る ></a></p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.1.0
+
+.list-original-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  align-content: space-between;
+
+  > .list-item {
+    width: 30.9%;
+    margin: 0 3.53% 60px 0;
+    position: relative;
+    height: 210px;
+
+    &:nth-of-type(3n) {
+      margin: 0 0 60px 0;
+    }
+
+    @include media(bulma-desktop) {
+      height: 240px;
+    }
+
+
+    @include media(bulma-tablet) {
+      margin: 0 0 50px 0;
+      width: 48.23%;
+      height: 200px;
+
+      &:nth-of-type(3n) {
+        margin: 0 0 50px 0;
+      }
+
+      &:nth-of-type(2n) {
+        margin: 0 0 50px 3.53%;
+      }
+    }
+
+
+    @include media(bulma-mobile) {
+      margin: 0 0 20px 0;
+      width: 100%;
+      height: auto;
+
+      &:nth-of-type(3n) {
+        margin: 0 0 20px 0;
+      }
+
+      &:nth-of-type(2n) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+
+    .item-label {
+      display: inline-block;
+      margin-right: 1rem;
+
+      .fa {
+        font-size: 1.8rem;
+      }
+    }
+
+    .item-title {
+      display: inline-block;
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+
+    .item-text {
+      margin-top: 1rem;
+      font-size: 1rem;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .item-more {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include media(bulma-mobile) {
+        position: static;
+        text-align: right;
+      }
+
+
+      a {
+        color: $dark-gray;
+        text-decoration: underline;
+
+        @include media(bulma-mobile) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルthirdリスト / ステップリスト
+//
+// Markup:
+// <ul class="list-original-third">
+//   <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/204x204" alt="サンプル"></p>
+//     <div class="item-body">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキスト</p>
+//     </div>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/204x204" alt="サンプル"></p>
+//     <div class="item-body">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキスト</p>
+//     </div>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/204x204" alt="サンプル"></p>
+//     <div class="item-body">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキスト</p>
+//     </div>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/204x204" alt="サンプル"></p>
+//     <div class="item-body">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキスト</p>
+//     </div>
+//   </li>
+// </ul>
+//
+// Styleguide 14.2.0
+
+.list-original-third {
+  display: flex;
+
+  @include media(bulma-mobile) {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+
+
+  > .list-item {
+    width: 22.9%;
+    margin-left: 2.77%;
+    position: relative;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:after {
+      content: "\f0da";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      font-smoothing: antialiased;
+      position: absolute;
+      right: -5%;
+      top: 25%;
+      color: $main;
+      font-size: 3rem;
+    }
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+
+    @include media(bulma-mobile) {
+      width: 100%;
+      margin-left: 0;
+      display: flex;
+      text-align: left;
+      margin-top: 1.25rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:after {
+        content: "\f0d7";
+        right: 50%;
+        bottom: -15%;
+        top: inherit;
+        font-size: 2rem;
+        transform: translateX(50%);
+      }
+    }
+
+
+    .item-image {
+      margin-bottom: 0.625rem;
+
+      @include media(bulma-tablet) {
+        img {
+          width: 80%;
+        }
+      }
+
+
+      @include media(bulma-mobile) {
+        flex: 1;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .item-body {
+      @include media(bulma-mobile) {
+        flex: 2;
+        padding-left: 10px;
+      }
+
+
+      .item-title {
+        margin-bottom: 0.625rem;
+        color: $main;
+        font-weight: bold;
+        font-size: 1.125rem;
+        text-align: center;
+      }
+
+      .item-text {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルfourthリスト / フローリスト
+//
+// Markup:
+// <ul class="list-original-fourth">
+//   <li class="list-item">
+//     <div class="item-inner">
+//       <p class="item-label"><span class="tag-original-primary-modi">STEP 1</span></p>
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </div>
+//     <div class="item-inner">
+//       <p class="item-image"><img src="http://satyr.io/520x350" alt="サンプル"></p>
+//     </div>
+//   </li>
+//   <li class="list-item">
+//     <div class="item-inner">
+//       <p class="item-label"><span class="tag-original-primary-modi">STEP 2</span></p>
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </div>
+//     <div class="item-inner">
+//       <p class="item-image"><img src="http://satyr.io/520x350" alt="サンプル"></p>
+//     </div>
+//   </li>        <li class="list-item">
+//     <div class="item-inner">
+//       <p class="item-label"><span class="tag-original-primary-modi">STEP 3</span></p>
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </div>
+//     <div class="item-inner">
+//       <p class="item-image"><img src="http://satyr.io/520x350" alt="サンプル"></p>
+//     </div>
+//   </li>        <li class="list-item">
+//     <div class="item-inner">
+//       <p class="item-label"><span class="tag-original-primary-modi">STEP 4</span></p>
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </div>
+//     <div class="item-inner">
+//       <p class="item-image"><img src="http://satyr.io/520x350" alt="サンプル"></p>
+//     </div>
+//   </li>
+// </ul>
+//
+// Styleguide 14.3.0
+
+.list-original-fourth {
+  > .list-item {
+    padding: 1.25rem;
+    background-color: $light-gray;
+    margin-bottom: 3.75rem;
+    display: flex;
+    position: relative;
+
+    @include media(bulma-mobile) {
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+
+    &:after {
+      content: "\f0d7";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      font-smoothing: antialiased;
+      position: absolute;
+      bottom: -15%;
+      left: 50%;
+      color: $midnight-blue;
+      font-size: 3rem;
+      transform: translateX(-50%);
+
+      @include media(bulma-mobile) {
+        bottom: -8%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &:after {
+        content: "";
+      }
+    }
+
+    .item-inner {
+      .item-label {
+        margin-bottom: 0.5rem;
+      }
+
+      .item-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $midnight-blue;
+        margin-bottom: 1.5rem;
+
+        @include media(bulma-tablet) {
+          font-size: 1.3rem;
+        }
+
+
+        @include media(bulma-mobile) {
+          font-size: 1.125rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .item-text {
+        display: block;
+        color: $midnight-blue;
+      }
+
+      &:first-child {
+        width: 48.3%;
+        margin-right: 4.22%;
+
+        @include media(bulma-mobile) {
+          width: 100%;
+          margin-right: 0;
+          order: 2;
+        }
+      }
+
+      &:last-child {
+        width: 47.48%;
+
+        @include media(bulma-tablet) {
+          .item-image {
+            margin-top: 1.5rem;
+          }
+        }
+
+
+        @include media(bulma-mobile) {
+          width: 100%;
+          order: 1;
+
+          .item-image {
+            margin: 0 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルfifthリスト / 罫線ストライプリスト
+//
+// Markup:
+// <ul class="list-original-fifth">
+//   <li class="list-item">
+//     <a href="#">
+//       <p class="item-date">2017.00.00</p>
+//       <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </a>
+//   </li>
+//   <li class="list-item">
+//     <a href="#">
+//       <p class="item-date">2017.00.00</p>
+//       <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </a>
+//   </li>
+//   <li class="list-item">
+//     <a href="#">
+//       <p class="item-date">2017.00.00</p>
+//       <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </a>
+//   </li>
+//   <li class="list-item">
+//     <a href="#">
+//       <p class="item-date">2017.00.00</p>
+//       <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     </a>
+//   </li>
+// </ul>
+// 
+//
+// Styleguide 14.4.0
+
+.list-original-fifth {
+  text-align: left;
+  background-color: $white;
+  width: 100%;
+  font-size: 1rem;
+
+  > .list-item {
+    border-top: 1px solid $bulma-light-gray;
+    padding: 2rem 0;
+
+    @include media(bulma-tablet) {
+      padding: 1.5rem 0;
+    }
+
+
+    @include media(bulma-mobile) {
+      padding: 1.2rem 0;
+    }
+
+
+    &:nth-child(even) {
+      background-color: $snow-white;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $bulma-light-gray;
+    }
+
+    a {
+      @extend .container-original-secondary;
+
+      color: $dark-gray;
+      overflow: hidden;
+      display: block;
+
+      @include media(bulma-tablet) {
+        padding: 0 1.5rem;
+      }
+
+
+      .item-date {
+        display: inline-block;
+        margin-right: 6em;
+
+        @include media(bulma-tablet) {
+          display: block;
+          margin-bottom: 0.25rem;
+        }
+      }
+
+      .item-body {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルsixthリスト / パンくず
+//
+// Markup:
+// <nav class="list-original-sixth">
+//   <ul class="list-inner">
+//     <li class="list-item"><a href="#">TOP</a></li>
+//     <li class="list-item"><a href="#">テキスト</a></li>
+//     <li class="list-item"><a href="#">テキスト</a></li>
+//     <li class="list-item">テキスト</li>
+//   </ul>
+// </nav>
+//
+// Styleguide 14.5.0
+
+.list-original-sixth {
+  font-size: 0.9375rem;
+  color: $dark-gray;
+
+  @include media(bulma-mobile) {
+    font-size: 0.8125rem;
+  }
+
+
+  > .list-inner {
+    .list-item {
+      display: inline-block;
+
+      a {
+        color: $main;
+      }
+
+      &:after {
+        content: ">";
+        padding: 0 4px 0 8px;
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルseventhリスト / 規約リスト
+//
+// Markup:
+// <dl class="list-original-seventh">
+//  <dt class="item-head">1. タイトル</dt>
+//  <dd class="item-body">
+//    <p class="item-body-inner">
+//      <span class="unit-title">トピックタイトル</span>
+//      <span class="unit-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+//    </p>
+//    <p class="item-body-inner">
+//      <span class="unit-title">トピックタイトル</span>
+//      <span class="unit-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+//    </p>
+//    <p class="item-body-inner">
+//      <span class="unit-title">トピックタイトル</span>
+//      <span class="unit-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+//    </p>
+//    <p class="item-body-inner">
+//      <span class="unit-title">トピックタイトル</span>
+//      <span class="unit-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+//    </p>
+//  </dd>
+// </dl>
+//
+// Styleguide 14.6.0
+
+.list-original-seventh {
+  > .item-head {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  > .item-body {
+    font-size: 1rem;
+    margin-left: 1em;
+
+    @include media(bulma-mobile) {
+      margin-left: 0.5em;
+    }
+
+
+    .item-body-inner {
+      margin-bottom: 1.875rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .unit-title {
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .unit-text {
+        margin-left: 3em;
+        display: block;
+
+        @include media(bulma-mobile) {
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルeighthリスト / よくある質問リスト
+//
+// Markup:
+// <ul class="list-original-eighth">
+//   <li class="list-item">
+//     <h3 class="item-title">タイトル</h3>
+//     <p class="item-text">テキストテキストテキストテキストテキスト
+//       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+//   <li class="list-item">
+//     <h3 class="item-title">タイトル</h3>
+//     <p class="item-text">テキストテキストテキストテキストテキスト
+//       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>//   <li class="list-item">
+//     <h3 class="item-title">タイトル</h3>
+//     <p class="item-text">テキストテキストテキストテキストテキスト
+//       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>//   <li class="list-item">
+//     <h3 class="item-title">タイトル</h3>
+//     <p class="item-text">テキストテキストテキストテキストテキスト
+//       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+//     テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.7.0
+
+.list-original-eighth {
+  > .list-item {
+    padding: 6.25rem 5rem;
+
+    @include media(bulma-tablet) {
+      padding: 4rem 3.5rem;
+    }
+
+
+    @include media(bulma-mobile) {
+      padding: 1.5rem 1rem;
+    }
+
+
+    &:nth-child(2n+1) {
+      background-color: $snow-white;
+    }
+
+    .item-title {
+      font-size: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid $bulma-light-gray;
+      margin-bottom: 2.5rem;
+
+      &:before {
+        content: "Q.";
+        padding-right: 0.5rem;
+      }
+
+      @include media(bulma-mobile) {
+        font-size: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid $bulma-light-gray;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .item-text {
+      display: block;
+      padding-left: 1.5em;
+      text-indent: -1.5em;
+
+      &:before {
+        content: "A.";
+        padding-right: 0.5rem;
+      }
+
+      .item-image {
+        margin-top: 2.5rem;
+
+        @include media(bulma-mobile) {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルninthリスト / 目標リスト
+//
+// Markup:
+// <ul class="list-original-ninth">
+//   <li class="list-item">
+//     <div class="item-title">
+//       <p class="heading-goal-title">タイトル</p>
+//     </div>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+//   <li class="list-item">
+//     <div class="item-title">
+//       <p class="heading-goal-title">タイトル</p>
+//     </div>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+//     <li class="list-item">
+//     <div class="item-title">
+//       <p class="heading-goal-title">タイトル</p>
+//     </div>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+//     <li class="list-item">
+//     <div class="item-title">
+//       <p class="heading-goal-title">タイトル</p>
+//     </div>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.8.0
+
+.list-original-ninth {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > .list-item {
+    box-sizing: border-box;
+    width: 47.5%;
+    margin-bottom: 5rem;
+  }
+
+  .item-title {}
+
+  @include media(bulma-mobile) {
+    display: block;
+
+    .list-item {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .item-title {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// List
+//
+// オリジナルtenthリスト / 画像リスト
+//
+// Markup:
+// <ul class="list-original-tenth">
+//   <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+//     <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+//     <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+//     <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+//     <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+//     <li class="list-item">
+//     <p class="item-image"><img src="http://satyr.io/345x210" alt="サンプル"></p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//     <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.9.0
+
+.list-original-tenth {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+
+
+  > .list-item {
+    width: 31%;
+    height: 450px;
+    position: relative;
+    margin-bottom: 3rem;
+
+    @include media(bulma-tablet) {
+      width: 47.5%;
+    }
+
+
+    @include media(bulma-mobile) {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+
+    .item-image {
+      margin-bottom: 1rem;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 0.8rem;
+      }
+
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .item-title {
+      margin-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1.125rem;
+      text-align: center;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 0.625rem;
+      }
+    }
+
+    .item-text {
+      @include media(bulma-mobile) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .item-more {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include media(bulma-mobile) {
+        position: static;
+        text-align: right;
+      }
+
+
+      a {
+        text-decoration: underline;
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルeleventhリスト / サービスリスト別デザイン04
+//
+// Markup:
+// <ul class="list-original-eleventh">
+//   <li class="list-item">
+//     <div class="list-item-inner">
+//       <p class="item-image">
+//         <img src="http://satyr.io/430x215" alt="サンプル">
+//       </p>
+//     </div>
+//     <div class="list-item-inner">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//       <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//     </div>
+//   </li>
+//   <li class="list-item">
+//     <div class="list-item-inner">
+//       <p class="item-image">
+//         <img src="http://satyr.io/430x215" alt="サンプル">
+//       </p>
+//     </div>
+//     <div class="list-item-inner">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//       <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//     </div>
+//   </li>
+//     <li class="list-item">
+//     <div class="list-item-inner">
+//       <p class="item-image">
+//         <img src="http://satyr.io/430x215" alt="サンプル">
+//       </p>
+//     </div>
+//     <div class="list-item-inner">
+//       <p class="item-title">タイトル</p>
+//       <p class="item-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+//       <p class="item-more"><a href="# ">詳しく見る &gt;</a></p>
+//     </div>
+//   </li>
+// </ul>
+//
+// Styleguide 14.10.0
+
+.list-original-eleventh {
+  > .list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+
+    @include media(bulma-mobile) {
+      display: block;
+      padding: 1.5rem 0;
+    }
+
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    > .list-item-inner {
+      width: 55%;
+
+      @include media(bulma-tablet) {
+        width: 60%;
+      }
+
+
+      @include media(bulma-mobile) {
+        width: 100%;
+      }
+
+
+      &:first-child {
+        width: 40%;
+
+        @include media(bulma-tablet) {
+          width: 30%;
+        }
+
+
+        @include media(bulma-mobile) {
+          width: 100%;
+        }
+      }
+
+      .item-image {
+        text-align: center;
+
+        @include media(bulma-mobile) {
+          width: 50%;
+          margin: 0 auto 1.5rem;
+        }
+      }
+
+      .item-title {
+        font-size: 1.375rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+
+        @include media(bulma-mobile) {
+          font-size: 1.125rem;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+      }
+
+      .item-text {
+        margin-bottom: 1.5rem;
+
+        @include media(bulma-mobile) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .item-more {
+        text-align: right;
+
+        @include media(bulma-mobile) {
+          margin-bottom: 1.5rem;
+        }
+
+
+        a {
+          color: $dark-gray;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルtwelvethリスト / イメージリスト3カラム
+//
+// Markup:
+// <ul class="list-original-twelveth">
+//   <li class="list-item">
+//     <p class="item-image">
+//       <img src="http://satyr.io/150x150" alt="サンプル">
+//     </p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+//   <li class="list-item">
+//     <p class="item-image">
+//       <img src="http://satyr.io/150x150" alt="サンプル">
+//     </p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキスト</p>
+//   </li>  <li class="list-item">
+//     <p class="item-image">
+//       <img src="http://satyr.io/150x150" alt="サンプル">
+//     </p>
+//     <p class="item-title">タイトル</p>
+//     <p class="item-text">テキストテキストテキストテキストテキストテキスト</p>
+//   </li>
+// </ul>
+//
+// Styleguide 14.11.0
+
+.list-original-twelveth {
+  display: flex;
+  justify-content: space-between;
+
+  @include media(bulma-mobile) {
+    display: block;
+  }
+
+
+  > .list-item {
+    width: 31%;
+
+    @include media(bulma-mobile) {
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+
+    .item-image {
+      margin-bottom: 1.5rem;
+      text-align: center;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 0.8rem;
+      }
+
+
+      img {
+        max-width: 150px;
+
+        @include media(bulma-mobile) {
+          max-width: 120px;
+        }
+      }
+    }
+
+    .item-title {
+      margin-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1.125rem;
+      text-align: center;
+
+      @include media(bulma-mobile) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .item-text {}
+  }
+}
+
+// List
+//
+// オリジナルthirteenthリスト / サムネイルリスト
+//
+// Markup:
+// <ul class="list-original-thirteenth">
+//   <li class="list-item">
+//     <a href="#">
+//       <div class="list-item-inner">
+//         <div class="item-image"><img src="http://satyr.io/150x150" alt="サンプル"></div>
+//       </div>
+//       <div class="list-item-inner">
+//         <p class="item-date">2000.00.00</p>
+//         <p class="item-tag">
+//           <span class="tag-original-primary-modi-2">CATEGORY</span>
+//         </p>
+//         <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//         </p>
+//       </div>
+//     </a>
+//   </li>
+//   <li class="list-item">
+//     <a href="#">
+//       <div class="list-item-inner">
+//         <div class="item-image"><img src="http://satyr.io/150x150" alt="サンプル"></div>
+//       </div>
+//       <div class="list-item-inner">
+//         <p class="item-date">2000.00.00</p>
+//         <p class="item-tag">
+//           <span class="tag-original-primary-modi-2">CATEGORY</span>
+//         </p>
+//         <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//         </p>
+//       </div>
+//     </a>
+//   </li>//   <li class="list-item">
+//     <a href="#">
+//       <div class="list-item-inner">
+//         <div class="item-image"><img src="http://satyr.io/150x150" alt="サンプル"></div>
+//       </div>
+//       <div class="list-item-inner">
+//         <p class="item-date">2000.00.00</p>
+//         <p class="item-tag">
+//           <span class="tag-original-primary-modi-2">CATEGORY</span>
+//         </p>
+//         <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//         </p>
+//       </div>
+//     </a>
+//   </li>//   <li class="list-item">
+//     <a href="#">
+//       <div class="list-item-inner">
+//         <div class="item-image"><img src="http://satyr.io/150x150" alt="サンプル"></div>
+//       </div>
+//       <div class="list-item-inner">
+//         <p class="item-date">2000.00.00</p>
+//         <p class="item-tag">
+//           <span class="tag-original-primary-modi-2">CATEGORY</span>
+//         </p>
+//         <p class="item-body">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//         </p>
+//       </div>
+//     </a>
+//   </li>
+// </ul>
+//
+// Styleguide 14.12.0
+
+.list-original-thirteenth {
+  > .list-item {
+    border-top: 1px $light-gray solid;
+    padding: 2rem 0;
+
+    @include media(bulma-tablet) {
+      padding: 1.5rem 0;
+    }
+
+
+    @include media(bulma-mobile) {
+      padding: 1.2rem 0;
+    }
+
+
+    &:last-child {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    a {
+      color: $dark-gray;
+      display: flex;
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+
+      @include media(bulma-tablet) {
+        padding: 0 1.5rem;
+      }
+
+
+      &:after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        content: "\f178";
+        font-family: FontAwesome;
+        fint-size: 1.25rem;
+        line-height: 1;
+        text-rendering: auto;
+        transform: translateY(-50%);
+
+        @include media(bulma-tablet) {
+          right: 1.5rem;
+        }
+
+
+        @include media(bulma-mobile) {
+          display: none;
+        }
+      }
+    }
+
+    .list-item-inner {
+      &:first-child {
+        margin-right: 1.5rem;
+        width: 120px;
+
+        @include media(bulma-mobile) {
+          width: 80px;
+          margin-right: 0.8rem;
+        }
+      }
+
+      .item-image {
+        width: inherit;
+      }
+
+      .item-date {
+        display: inline-block;
+        margin-right: 0.625rem;
+      }
+
+      .item-tag {
+        display: inline-block;
+      }
+
+      .item-body {
+        display: block;
+        margin-top: 1rem;
+        padding-right: 3rem;
+
+        @include media(bulma-mobile) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルfourteenthリスト / テキストリスト2カラム
+//
+// Markup:
+// <div class="list-original-fourteenth">
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+//   <dl class="list-item">
+//     <dt class="item-head">タイトル</dt>
+//     <dd class="item-body">テキストテキスト</dd>
+//   </dl>
+// </div>
+//
+// Styleguide 14.13.0
+
+.list-original-fourteenth {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .list-item {
+    width: 47.5%;
+    margin-top: 1.625rem;
+    display: table;
+
+    &:first-child {
+      margin-top: 0;
+
+      @include media(bulma-mobile) {
+        margin-top: 1rem;
+      }
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 0;
+
+      @include media(bulma-mobile) {
+        margin-top: 1rem;
+      }
+    }
+
+    @include media(bulma-mobile) {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+
+    > .item-head {
+      font-weight: bold;
+      width: 30%;
+      display: table-cell;
+
+      @include media(bulma-mobile) {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    > .item-body {
+      display: table-cell;
+
+      @include media(bulma-mobile) {
+        display: block;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+// List
+//
+// オリジナルfifteenthリスト /バナーリスト
+//
+// Markup:
+// <ul class="list-original-fifteenth">
+//   <li class="list-item">
+//       <img src="http://satyr.io/500x150">
+//   </li>
+//   <li class="list-item">
+//       <img src="http://satyr.io/500x150">
+//   </li>
+//   <li class="list-item">
+//       <img src="http://satyr.io/500x150">
+//   </li>
+//   <li class="list-item">
+//       <img src="http://satyr.io/500x150">
+//   </li>
+// </ul>
+//
+// Styleguide 14.14.0
+
+.list-original-fifteenth {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > .list-item {
+    margin-bottom: 1.875rem;
+    width: 45%;
+
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+
+    @include media(bulma-mobile) {
+      width: 100%;
+
+      &:nth-last-child(2) {
+        margin-bottom: 1.875rem;
+      }
+
+      &:nth-last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

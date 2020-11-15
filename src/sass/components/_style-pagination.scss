@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+// Pagination
+//
+// Bulmaページネーション / ステップページネーション
+//
+// Markup:
+// <nav class="pagination is-centered">
+//   <ul class="pagination-list">
+//     <li><a class="pagination-link">1</a></li>
+//     <li><span class="pagination-ellipsis">&hellip;</span></li>
+//     <li><a class="pagination-link">5</a></li>
+//     <li><a class="pagination-link current">6</a></li>
+//     <li><a class="pagination-link">7</a></li>
+//     <li><span class="pagination-ellipsis">&hellip;</span></li>
+//     <li><a class="pagination-link">12</a></li>
+//   </ul>
+// </nav>
+//
+// Styleguide 11.0.0
+
+// Pagination
+//
+// Bulmaページネーション / nextprevボタン付きページネーション
+//
+// Markup:
+// <nav class="pagination is-centered">
+//   <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+//   <a class="pagination-next">Next page</a>
+//   <ul class="pagination-list">
+//     <li>
+//       <a class="pagination-link current">1</a>
+//     </li>
+//     <li>
+//       <a class="pagination-link">2</a>
+//     </li>
+//     <li>
+//       <a class="pagination-link">3</a>
+//     </li>
+//   </ul>
+// </nav>
+//
+// Styleguide 11.1.0
+
+// Pagination
+//
+// オリジナルprimaryページネーション / ページャー矢印付き
+//
+// Markup:
+// <nav class="pagination-original-primary is-centered">
+//   <ul class="pagination-list">
+//     <li class="is-hidden">
+//       <a class="pagination-link" href="#"><span class="icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span></a>
+//     </li>
+//     <li>
+//       <a class="pagination-link current" href="#">1</a>
+//     </li>
+//     <li>
+//       <a class="pagination-link" href="#">2</a>
+//     </li>
+//     <li>
+//       <a class="pagination-link" href="#">3</a>
+//     </li>
+//     <li>
+//       <a class="pagination-link" href="#"><span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+//     </li>
+//   </ul>
+// </nav>
+//
+// Styleguide 11.2.0
+
+.pagination-original-primary {
+  @extend .pagination;
+
+  .pagination-link {
+    &.current {
+      background-color: $main;
+      border-color: $main;
+      color: $white;
+    }
+  }
+}

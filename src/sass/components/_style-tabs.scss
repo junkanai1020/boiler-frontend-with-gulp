@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+// Tabs
+//
+// Bulmaタブ /  下線付きテキストタブ
+//
+// Markup:
+// <div class="tabs">
+//   <ul>
+//     <li class="is-active"><a>Pictures</a></li>
+//     <li><a>Music</a></li>
+//     <li><a>Videos</a></li>
+//     <li><a>Documents</a></li>
+//   </ul>
+// </div>
+//
+// Styleguide 12.0.0
+
+// Tabs
+//
+// Bulmaタブ /  アイコン付きタブ
+//
+// Markup:
+// <div class="tabs is-centered">
+//   <ul>
+//     <li class="is-active">
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-image"></i></span>
+//         <span>Pictures</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-music"></i></span>
+//         <span>Music</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-film"></i></span>
+//         <span>Videos</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+//         <span>Documents</span>
+//       </a>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide 12.1.0
+
+// Tabs
+//
+// Bulmaタブ /  罫線タブ
+//
+// Markup:
+// <div class="tabs is-boxed">
+//   <ul>
+//     <li class="is-active">
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-image"></i></span>
+//         <span>Pictures</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-music"></i></span>
+//         <span>Music</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-film"></i></span>
+//         <span>Videos</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+//         <span>Documents</span>
+//       </a>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide 12.2.0
+
+// Tabs
+//
+// Bulmaタブ /  ブロックタブ
+//
+// Markup:
+// <div class="tabs is-toggle">
+//   <ul>
+//     <li class="is-active">
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-image"></i></span>
+//         <span>Pictures</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-music"></i></span>
+//         <span>Music</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-film"></i></span>
+//         <span>Videos</span>
+//       </a>
+//     </li>
+//     <li>
+//       <a>
+//         <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+//         <span>Documents</span>
+//       </a>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide 12.4.0
+
+
+// Tabs
+//
+// Bulmaタブ /  シェイプタブ
+//
+// Markup:
+// <div class="tab-bulma-box is-boxed is-centered is-medium">
+//   <ul>
+//     <li class="is-active">
+//       <a href="#">タブ01</a>
+//     </li>
+//     <li class="">
+//       <a href="#">タブ02</a>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide 12.5.0
+
+.tab-bulma-box {
+  @extend .tabs;
+  @extend %space-tabs-bulma;
+  li {
+    &.is-active {
+      a {
+        color: $main;
+      }
+    }
+  }
+}
+
+// Tabs
+//
+// オリジナルprimaryタブ / 罫線アイコン付きタブ
+//
+// Markup:
+// <ul class="tab-original-primary">
+//  <li class="tab-item"><a href="#"><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>タブ01</a></li>
+//  <li class="tab-item"><a href="#"><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>タブ02</a></li>
+//  <li class="tab-item"><a href="#"><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>タブ03</a></li>
+// </ul>
+//
+// Styleguide 12.6.0
+
+.tab-original-primary {
+  display: flex;
+  align-items: center;
+
+  > .tab-item {
+    margin-left: 1.5em;
+    flex: 1;
+    text-align: center;
+    border: 1px solid $midium-gray;
+    font-size: 1rem;
+    font-weight: bold;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .fa {
+      padding-right: 0.3rem;
+      transform: translateY(10%);
+      font-size: 1.2rem;
+    }
+
+    > a {
+      color: $dark-gray;
+      padding: 1rem 0;
+      display: block;
+
+      @include media(bulma-mobile) {
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}

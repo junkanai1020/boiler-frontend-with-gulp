@@ -1,0 +1,384 @@
+@charset "utf-8";
+
+// Table
+//
+// Bulmaテーブル / 罫線テーブル
+//
+// Markup:
+// <div class="column">
+//  <table class="table is-bordered">
+//    <thead>
+//      <tr>
+//        <th>タイトル01</th>
+//        <th>タイトル02</th>
+//      </tr>
+//    </thead>
+//    <tbody>
+//      <tr>
+//        <td>アイテム</td>
+//        <td>アイテム</td>
+//      </tr>
+//    </tbody>
+//  </table>
+// </div>
+//
+// Styleguide 8.0.0
+
+// Table
+//
+// Bulmaテーブル / ボーダーテーブル
+//
+// Markup:
+// <table class="table is-striped">
+//   <tbody>
+//    <thead>
+//      <tr>
+//        <th>タイトル01</th>
+//        <th>タイトル02</th>
+//      </tr>
+//    </thead>
+//     <tr>
+//       <td>アイテム</td>
+//       <td>アイテム</td>
+//     </tr>
+//     <tr>
+//       <td>アイテム</td>
+//       <td>アイテム</td>
+//     </tr>
+//     <tr>
+//       <td>アイテム</td>
+//       <td>アイテム</td>
+//     </tr>
+//     <tr>
+//       <td>アイテム</td>
+//       <td>アイテム</td>
+//     </tr>
+//     <tr>
+//       <td>アイテム</td>
+//       <td>アイテム</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide 8.1.0
+
+// Table
+//
+// オリジナルprimaryテーブル / ヘッド背景テーブル
+//
+// Markup:
+// <table class="table-original-primary">
+//       <thead>
+//      <tr>
+//        <th class="item-head">タイトル01</th>
+//        <th class="item-head">アイテム</th>
+//        <th class="item-head">アイテム</th>
+//        </tr>
+//    </thead>
+//    <tbody>
+//         <tr>
+//             <td class="item-body">タイトル02</td>
+//             <td class="item-body">アイテム</td>
+//             <td class="item-body">アイテム</td>
+//         </tr>
+//         <tr>
+//             <td class="item-body">タイトル03</td>
+//             <td class="item-body">アイテム</td>
+//             <td class="item-body">アイテム</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Styleguide 8.2.0
+
+.table-original-primary {
+  @extend .table;
+
+  @extend .is-bordered;
+
+  thead {
+    tr {
+      .item-head {
+        background-color: $light-gray;
+        border: 1px solid $bulma-light-gray;
+        text-align: center;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      > .item-title {
+        border-bottom-width: 1px !important;
+
+        @include media(bulma-mobile) {
+          vertical-align: middle;
+        }
+      }
+
+      > .item-body {
+        border-bottom-width: 1px !important;
+        padding: 0.5rem 0.75rem;
+
+        @include media(bulma-mobile) {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.table-price-ver01 {
+  @extend .table-original-primary;
+
+  thead {
+    tr {
+      .item-head {
+        &:nth-of-type(3) {
+          @include media(bulma-mobile) {
+            display: none;
+          }
+        }
+
+        &:nth-of-type(5) {
+          @include media(bulma-mobile) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      > .item-body {
+        &:nth-of-type(3) {
+          @include media(bulma-mobile) {
+            display: none;
+          }
+        }
+
+        &:nth-of-type(5) {
+          @include media(bulma-mobile) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Table
+//
+// オリジナルsecondaryテーブル / 左ヘッド背景テーブル
+//
+// Markup:
+// <table class="table-original-secondary">
+//     <tbody>
+//         <tr>
+//             <th class="item-title">タイトル01</th>
+//             <td class="item-body">アイテム</td>
+//         </tr>
+//         <tr>
+//             <th class="item-title">タイトル02</th>
+//             <td class="item-body">アイテム</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Styleguide 8.3.0
+
+.table-original-secondary {
+  @extend .table;
+
+  @extend .is-bordered;
+
+  tbody {
+    tr {
+      > .item-title {
+        background-color: $light-gray;
+        width: 30%;
+        border-bottom-width: 1px !important;
+
+        @include media(bulma-mobile) {
+          width: 40%;
+          vertical-align: middle;
+        }
+      }
+
+      > .item-body {
+        border-bottom-width: 1px !important;
+
+        @include media(bulma-mobile) {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+// Table
+//
+// オリジナルthirdテーブル / 罫線テーブル
+//
+// Markup:
+// <table class="table-original-third">
+//  <tbody>
+//    <tr>
+//      <td class="item-head">タイトル</td>
+//      <td class="item-body">テキストテキストテキスト</td>
+//    </tr>
+//    <tr>
+//      <td class="item-head">タイトル</td>
+//      <td class="item-body">テキストテキストテキスト</td>
+//    </tr>
+//    <tr>
+//      <td class="item-head">タイトル</td>
+//      <td class="item-body">テキストテキストテキスト</td>
+//    </tr>
+//    <tr>
+//      <td class="item-head">タイトル</td>
+//      <td class="item-body"></td>
+//    </tr>
+//  </tbody>
+// </table>
+//
+// Styleguide 8.4.0
+
+.table-original-third {
+  @extend .table;
+
+  tbody {
+    tr {
+      > .item-head {
+        border-bottom-width: 1px !important;
+        padding: 2rem 0.75em;
+        width: 20%;
+
+        @include media(bulma-mobile) {
+          width: 100%;
+          display: block;
+          border-bottom: none;
+          padding: 1rem 0 0;
+          font-weight: bold;
+        }
+      }
+
+      > .item-body {
+        border-bottom-width: 1px !important;
+        padding: 2rem 0.75em;
+
+        @include media(bulma-mobile) {
+          display: block;
+          border-top: none;
+          padding: 0 0 1rem;
+        }
+      }
+
+      &:first-child {
+        > .item-head {
+          border-top-width: 1px !important;
+        }
+
+        > .item-body {
+          border-top-width: 1px !important;
+        }
+      }
+    }
+  }
+}
+
+// Table
+//
+// オリジナルfourthテーブル / 背景色ありヘッドテーブル
+//
+// Markup:
+// <table class="table-original-fourth">
+//     <tbody>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//         <tr>
+//             <th class="item-title has-text-centered">タイトル</th>
+//             <td class="item-body">
+//                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+//              </td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Styleguide 8.5.0
+
+.table-original-fourth {
+  tbody {
+    tr {
+      > .item-title {
+        background-color: $light-gray;
+        width: 30%;
+        padding: 1.5rem 1.2rem;
+        border-bottom: 10px $white solid;
+        vertical-align: middle;
+      }
+
+      > .item-body {
+        border-bottom: 10px $white solid;
+        padding: 1.5rem 2rem;
+
+        span {
+          display: block;
+        }
+
+        @include media(bulma-mobile) {
+          padding: 1.5rem 1rem;
+          width: 40%;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

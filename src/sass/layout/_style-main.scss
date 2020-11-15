@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+//------------------------------------------------------------------------------------------------
+//
+//  メインコンテンツ
+//
+//------------------------------------------------------------------------------------------------
+.l-main {
+  // header.ectの場合
+  padding-top: 86px;
+
+  @include media(bulma-tablet) {
+    padding-top: 62px;
+  }
+  @include media(bulma-tablet) {
+    padding-top: 62px;
+  }
+
+  // header01.ectの場合
+  // padding-top: 167px;
+
+  // @include media(bulma-tablet) {
+  //   padding-top: 150px;
+  // }
+  // @include media(bulma-mobile) {
+  //   padding-top: 62px;
+  // }
+}
